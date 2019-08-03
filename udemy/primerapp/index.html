@@ -7,12 +7,18 @@
     <title>Primera app Vue</title>
 </head>
 <body>
-
+    
     <div id="app">
-        {{message}}
+        <h1>{{message}}</h1>
+        <button type="button" v-on:click=" message = 'cambio de mensaje' ">Cambiar Mensaje</button>
+        <button type="button" v-on:click=" destroyMessage ">Destruir Mensaje</button>
+        <div>
+            <!--<img v-bind:src="img" alt="">-->
+            <!--<img v-bind:src="img" alt="">-->
+        </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="vue.js"></script>
     <script src="app.js"></script>
 </body>
 </html>
