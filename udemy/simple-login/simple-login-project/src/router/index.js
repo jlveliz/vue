@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Login from '@/components/Login'
 import Secure from '@/components/Secure'
+import HelloWorld from '@/components/HelloWorld'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ export default new Router({
       path: '/secure',
       name: 'secure',
       component: Secure
+    },
+    {
+      path: '/hello',
+      name: 'hello',
+      component:HelloWorld
     }
   ]
 })

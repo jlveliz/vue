@@ -20,7 +20,6 @@ export default {
     };
   },
   mounted() {
-    console.log(this.authenticated);
     if (!this.authenticated) {
       this.$router.replace({ name: "login" });
     }
