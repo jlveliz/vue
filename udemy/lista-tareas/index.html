@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <style>
+        .terminado{
+            text-decoration: line-through;
+            color:gray;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" class="container jumbotron">
+        <div class="row">
+            <h1 class="col-lg-12">{{title}}</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <input type="text" v-model="nuevaTarea" class="form-control" v-on:keyup.enter="addTask"> 
+                <button type="button" class="btn btn-default" v-on:click="addTask">Agregar</button>
+                <ul class="list-group">
+                    <li v-for="tarea in tareas" class="list-group-item" v-bind:class="{terminado:tarea.terminado}">{{tarea.texto}} 
+                        <span class="pull-right">
+                            
+                            <button type="button" class="btn btn-success btn-xs glyphicon glyphicon-ok" v-on:click="tarea.terminado = !tarea.terminado"></button>  
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="vue.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
