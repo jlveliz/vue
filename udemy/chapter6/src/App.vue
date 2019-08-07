@@ -4,7 +4,6 @@
       <titulo :text="titulo"/>
       <nueva-tarea :tasks="tareas" v-on:updateNumEvents="numTareas+= $event"/>
       <lista-tareas :tasks="tareas"/>
-      {{numTareas}}
     </div>
   </div>
 </template>
@@ -23,7 +22,6 @@ export default {
         {texto:'Aprender Agular', terminado: false},
         {texto:'Aprender Css', terminado: false},
       ],
-      numTareas: 3,
     }
   },
   components: {
