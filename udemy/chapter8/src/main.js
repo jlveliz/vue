@@ -9,6 +9,12 @@ Vue.directive('decorar',{
   bind(el, binding, vnode){
     el.style.fontFamily = binding.value;
 
+    //argumentos o parametros
+    if(binding.arg == 'grande') {
+      el.style.fontSize = "80px";
+    }
+
+    //modificadores
     if(binding.modifiers['negrilla']){
       el.style.fontWeight = 'bold';
     }
