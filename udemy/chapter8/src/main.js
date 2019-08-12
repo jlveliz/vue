@@ -5,6 +5,12 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+Vue.directive('decorar',{
+  bind(el, binding, vnode){
+    el.style.fontStyle = "italic";
+  }
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
