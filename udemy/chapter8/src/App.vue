@@ -2,7 +2,7 @@
   <div id="app">
       <div class="container">
         <div class="jumbotron">
-          <span v-decorar:grande.negrilla.italico="family">Aprende Vue.js 2 Fácilmente</span>
+          <span v-decorar:grande.negrilla.italico="{familia:'helvetica',color:'red'}">Aprende Vue.js 2 Fácilmente</span>
         </div>
     </div>
   </div>

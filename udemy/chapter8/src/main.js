@@ -7,7 +7,8 @@ Vue.config.productionTip = false
 
 Vue.directive('decorar',{
   bind(el, binding, vnode){
-    el.style.fontFamily = binding.value;
+    el.style.fontFamily = binding.value.familia;
+    el.style.color = binding.value.color;
 
     //argumentos o parametros
     if(binding.arg == 'grande') {
