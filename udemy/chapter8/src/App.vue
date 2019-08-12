@@ -2,7 +2,7 @@
   <div id="app">
       <div class="container">
         <div class="jumbotron">
-          <span v-decorar="'times new roman'">Aprende Vue.js 2 Fácilmente</span>
+          <span v-decorar="family">Aprende Vue.js 2 Fácilmente</span>
         </div>
     </div>
   </div>
@@ -13,7 +13,13 @@
 
 export default {
   name: 'App',
+  data() {
+    return {
+      family: 'helvetica'
+    }
+  },
   components: {
+    
   }
 }
 </script>
