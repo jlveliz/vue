@@ -2,7 +2,7 @@
   <div id="app">
       <div class="container">
         <div class="jumbotron">
-          <span v-decorar>Aprende Vue.js 2 Fácilmente</span>
+          <span v-decorar="'times new roman'">Aprende Vue.js 2 Fácilmente</span>
         </div>
     </div>
   </div>

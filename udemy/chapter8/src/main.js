@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 
 Vue.directive('decorar',{
   bind(el, binding, vnode){
-    el.style.fontStyle = "italic";
+    el.style.fontFamily = binding.value;
   }
 });
 
