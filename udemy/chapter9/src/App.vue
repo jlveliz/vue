@@ -51,11 +51,11 @@
                 Acepto terminos y condiciones
               </label>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="submit" class="btn btn-primary" @click.prevent="processForm">Enviar</button>
           </form>
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6" v-if="mostrar">
           <h1>Resultados</h1>
           <p> <b>Nombre:</b> {{usuario.nombre}}</p>
           <p> <b>Correo Electrónico:</b> {{usuario.correo}} </p>
@@ -95,9 +95,15 @@ export default {
         'Ecuador',
         'Uruguay',
         'Brasil'
-      ]
+      ],
+      mostrar : false
       
     }
+  },
+  methods: {
+      processForm() {
+        this.mostrar = true;
+      }
   }
 }
 </script>
