@@ -35,13 +35,13 @@
             <h3>Género</h3>
             <div class="radio">
               <label>
-                <input type="radio" name="genero" id="genero" checked>
+                <input type="radio" name="genero" id="genero" v-model="usuario.genero" value="Hombre">
                 Hombre
               </label>
             </div>
             <div class="radio">
               <label>
-                <input type="radio" name="genero" id="genero">
+                <input type="radio" name="genero" id="genero" v-model="usuario.genero" value="Mujer">
                 Mujer
               </label>
             </div>
@@ -63,7 +63,7 @@
           <p> <b>Edad:</b> {{usuario.edad}} </p>
           <p> <b>País:</b> {{usuario.pais}} </p>
           <p class="mensaje"> <b>Mensaje:</b> {{usuario.mensaje}} </p>
-          <p> <b>Género:</b> </p>
+          <p> <b>Género:</b> {{usuario.genero}} </p>
           <p> <b>condiciones:</b> </p>
         </div>
 
@@ -84,7 +84,8 @@ export default {
         correo: "",
         password: "",
         edad: "",
-        pais: null
+        pais: null,
+        genero: "Hombre",
       },
       paises : [
         'Argentina',
