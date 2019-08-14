@@ -47,7 +47,7 @@
             </div>
             <div class="checkbox">
               <label>
-                <input type="checkbox" value="">
+                <input type="checkbox" value="acepto" v-model="usuario.condiciones">
                 Acepto terminos y condiciones
               </label>
             </div>
@@ -64,7 +64,7 @@
           <p> <b>País:</b> {{usuario.pais}} </p>
           <p class="mensaje"> <b>Mensaje:</b> {{usuario.mensaje}} </p>
           <p> <b>Género:</b> {{usuario.genero}} </p>
-          <p> <b>condiciones:</b> </p>
+          <p> <b>condiciones:</b> {{usuario.condiciones}} </p>
         </div>
 
       </div>
@@ -86,6 +86,7 @@ export default {
         edad: "",
         pais: null,
         genero: "Hombre",
+        condiciones: []
       },
       paises : [
         'Argentina',
