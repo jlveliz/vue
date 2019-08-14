@@ -7,11 +7,11 @@
           <form action="">
             <div class="form-group">
               <label for="nombre" class="form-label">Nombre</label>
-              <input type="text" name="nombre" id="nombre" class="form-control" v-model="usuario.nombre">
+              <input type="text" name="nombre" id="nombre" class="form-control" v-model.trim="usuario.nombre">
             </div>
             <div class="form-group">
               <label for="email">Correo Electrónico</label>
-              <input type="email" name="email" id="email" class="form-control" v-model="usuario.correo">
+              <input type="email" name="email" id="email" class="form-control" v-model.lazy="usuario.correo">
             </div>
             <div class="form-group">
               <label for="password">Contraseña</label>
@@ -19,7 +19,7 @@
             </div>
             <div class="form-group">
               <label for="edad">Edad</label>
-              <input type="number" name="edad" id="edad" class="form-control" min="1" v-model="usuario.edad">
+              <input type="number" name="edad" id="edad" class="form-control" min="1" v-model.number="usuario.edad">
             </div>
             <div class="form-group">
               <label for="pais">País</label>
@@ -62,7 +62,7 @@
         </div>
         <div class="col-md-6">
           <h1>Resultados</h1>
-          <p> <b>Nombre:</b> {{usuario.nombre}} </p>
+          <p> <b>Nombre:</b> {{usuario.nombre}}</p>
           <p> <b>Correo Electrónico:</b> {{usuario.correo}} </p>
           <p> <b>Contraseña:</b> {{usuario.password}} </p>
           <p> <b>Edad:</b> {{usuario.edad}} </p>
