@@ -30,7 +30,7 @@
             </div>
             <div class="form-group">
               <label for="mensaje">Mensaje</label>
-              <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="5"></textarea>
+              <textarea class="form-control" name="mensaje" id="mensaje" cols="30" rows="5" v-model="usuario.mensaje"></textarea>
             </div>
             <h3>Género</h3>
             <div class="radio">
@@ -62,7 +62,7 @@
           <p> <b>Contraseña:</b> {{usuario.password}} </p>
           <p> <b>Edad:</b> {{usuario.edad}} </p>
           <p> <b>País:</b> {{usuario.pais}} </p>
-          <p> <b>Mensaje:</b> </p>
+          <p class="mensaje"> <b>Mensaje:</b> {{usuario.mensaje}} </p>
           <p> <b>Género:</b> </p>
           <p> <b>condiciones:</b> </p>
         </div>
@@ -101,5 +101,7 @@ export default {
 </script>
 
 <style>
-
+  .mensaje {
+    white-space: pre
+  }
 </style>
