@@ -25,12 +25,7 @@
               <label for="pais">País</label>
               <!-- <input type="int" name="edad" id="edad" class="form-control"> -->
               <select name="pais" id="pais" class="form-control" v-model="usuario.pais">
-                <option value="Argentina">Argentina</option>
-                <option value="Bolivia">Bolivia</option>
-                <option value="Colombia">Colombia</option>
-                <option value="Ecuador">Ecuador</option>
-                <option value="Uruguay">Uruguay</option>
-                <option value="Brasil">Brasil</option>
+                <option v-for="pais in paises">{{pais}}</option>
               </select>
             </div>
             <div class="form-group">
@@ -90,7 +85,15 @@ export default {
         password: "",
         edad: "",
         pais: null
-      }
+      },
+      paises : [
+        'Argentina',
+        'Bolivia',
+        'Colombia',
+        'Ecuador',
+        'Uruguay',
+        'Brasil'
+      ]
       
     }
   }
