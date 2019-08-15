@@ -6,6 +6,12 @@
       {{mensaje | mayusculas}}
       <hr/>  
       {{mensaje | suspensivos | mayusculas}}
+
+      <hr/>
+      <h3>Temparatura</h3>
+      {{temparatura}}
+      <hr/>
+      {{temparatura | aFahrenheit}}
     </div>
   </div>
 </template>
@@ -15,12 +21,16 @@
 export default {
   data() {
     return {
-      mensaje: 'Aprende JS 2 Fácilmente'
+      mensaje: 'Aprende JS 2 Fácilmente',
+      temparatura: 30
     }
   },
   filters: {
     mayusculas(str) {
       return str.toUpperCase();
+    },
+    aFahrenheit(temp) {
+      return (9/5 * temp) + 32 + ' F';
     }
   }
 }
