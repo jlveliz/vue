@@ -1,9 +1,11 @@
 <template>
   <div class="container">
     <div class="jumbotron">
+      {{mensaje }}
+      <hr/>  
       {{mensaje | mayusculas}}
       <hr/>  
-      {{mensaje }}
+      {{mensaje | suspensivos | mayusculas}}
     </div>
   </div>
 </template>

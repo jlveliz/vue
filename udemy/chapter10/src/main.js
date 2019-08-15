@@ -5,6 +5,10 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+Vue.filter('suspensivos', texto => {
+  return texto.substring(0,10) + '...' ;
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
