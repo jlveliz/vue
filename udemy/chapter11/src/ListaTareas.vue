@@ -14,9 +14,6 @@ export default {
     name: 'ListaTareas',
     props: ['tasks'],
     methods: {
-        removeTask(index){
-            this.tasks.splice(index,1);
-        },
         updateTask (index) {
             let terminada = this.tasks[index].terminado = !this.tasks[index].terminado;
             let id = this.tasks[index].id;
@@ -27,6 +24,13 @@ export default {
                 console.log(result);
             })
 
+        },
+        removeTask(index){
+            let id = this.tasks[index].id;
+            this.tasks.splice(index,1);
+            this.$http.delete('tareas/'+id+'.json').then( result => {
+                console.log(result)
+            })
         }
     }
 }
