@@ -21,11 +21,16 @@ export default {
     }
   },
   created() {
-    this.$http.get('https://tarejas-a2bb0.firebaseio.com/tareas.json').then( response => {
+    this.$http.get('tareas.json').then( response => {
       return response.json()
     }).then( responseJson => {
         for(let id in responseJson) {
-          this.tareas.push(responseJson[id]);
+          let tarea = {
+            id : id,
+            texto: responseJson[id].texto,
+            terminado: responseJson[id].terminado
+          }
+          this.tareas.push(tarea);
         }
     })
   },

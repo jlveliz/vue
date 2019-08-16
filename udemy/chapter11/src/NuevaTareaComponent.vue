@@ -38,7 +38,7 @@ export default {
             }
             this.newTask = '';
             //envia a firebase
-            this.$http.post('https://tarejas-a2bb0.firebaseio.com/tareas.json',task).then( response => {
+            this.$http.post('tareas.json',task).then( response => {
                 console.log(response);
             });
         }
