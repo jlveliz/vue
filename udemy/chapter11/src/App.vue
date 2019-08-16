@@ -17,12 +17,17 @@ export default {
   data()  {
     return {
       titulo : '-Lista de Tareas-',
-      tareas: [
-        {texto:'Aprender Js', terminado: false},
-        {texto:'Aprender Agular', terminado: false},
-        {texto:'Aprender Css', terminado: false},
-      ],
+      tareas: [],
     }
+  },
+  created() {
+    this.$http.get('https://tarejas-a2bb0.firebaseio.com/tareas.json').then( response => {
+      return response.json()
+    }).then( responseJson => {
+        for(let id in responseJson) {
+          this.tareas.push(responseJson[id]);
+        }
+    })
   },
   components: {
     Titulo,

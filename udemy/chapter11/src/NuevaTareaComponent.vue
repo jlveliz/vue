@@ -23,8 +23,13 @@ export default {
     ],
     methods: {
         addTask() {
+            let task = {texto:this.newTask,terminado:false};
             if(this.tasks) {
-                this.tasks.push({texto:this.newTask,terminado:false});
+
+                this.tasks.push(task);
+                
+                
+                
                 //una forma de enviar eventos 
                 // this.$emit('updateNumEvents',1);
 
@@ -32,6 +37,10 @@ export default {
                 bus.$emit('actualizarContador',this.tasks.length);
             }
             this.newTask = '';
+            //envia a firebase
+            this.$http.post('https://tarejas-a2bb0.firebaseio.com/tareas.json',task).then( response => {
+                console.log(response);
+            });
         }
     },
     created() {
