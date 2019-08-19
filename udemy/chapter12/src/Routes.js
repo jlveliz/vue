@@ -17,5 +17,13 @@ export const routes = [
         path:'/users/:id', 
         component:UserDetailComponent, 
         name:"UserDetail"
+    },
+    {
+        path:'/usuarios',
+        redirect:'/users'
+    },
+    {
+        path:'*',
+        redirect:'/'
     }
 ]
