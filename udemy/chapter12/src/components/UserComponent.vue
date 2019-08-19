@@ -2,7 +2,7 @@
     <div>
        <p class="text-muted">Lista de usuarios</p>
        <ul class="list-group">
-           <li class="list-group-item" v-for="user in users"> {{user.first_name}}</li>
+           <router-link tag="li" class="list-group-item" :to="{name:'UserDetail', params:{ id: user.id } }" v-for="user in users">{{user.first_name}}</router-link>
        </ul>
        <router-view></router-view>
     </div>
