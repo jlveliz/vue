@@ -1,7 +1,9 @@
 <template>
   <div class="container">
     <Encabezado/>
-    <div class="jumbotron"></div>
+    <div class="jumbotron">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 
