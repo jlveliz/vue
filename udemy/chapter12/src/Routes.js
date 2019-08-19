@@ -10,8 +10,12 @@ export const routes = [
     {
         path:'/users',
         component: UserComponent,
-        children: [
-            { path:':id', component:UserDetailComponent, name:"UserDetail"}
-        ]
+        name: 'Users'
+        
+    },
+    {  
+        path:'/users/:id', 
+        component:UserDetailComponent, 
+        name:"UserDetail"
     }
 ]

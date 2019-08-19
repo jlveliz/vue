@@ -6,6 +6,8 @@
             <p><strong>Apellido:</strong> {{user.last_name}}</p>
             <p><strong>Email:</strong> {{user.email}}</p>
         </div>
+        <button class="btn btn-primary" @click="volver">Volver</button>
+       
     </div>
 </template>
 
@@ -17,17 +19,9 @@ export default {
             user: {}
         }
     },
-    watch: {
-        //detectacambios en la ruta de la vista
-        $route(){
-            let id = this.$route.params.id;
-            this.$http.get('https://reqres.in/api/users/'+id).then( (result) => {
-                return result.json();
-            }).then( (result) => {
-                this.user = result.data;  
-            }).catch((err) => {
-                
-            });
+    methods: {
+        volver() {
+            this.$router.push({name:'Users'});
         }
     },
     created() {

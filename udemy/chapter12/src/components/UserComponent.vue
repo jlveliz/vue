@@ -2,7 +2,7 @@
     <div>
        <p class="text-muted">Lista de usuarios</p>
        <ul class="list-group">
-           <router-link tag="li" class="list-group-item" :to="{name:'UserDetail', params:{ id: user.id } }" v-for="user in users">{{user.first_name}}</router-link>
+           <router-link tag="li" v-for="user in users" v-bind:key="user" :to="{name:'UserDetail', params:{ id: user.id } }" class="list-group-item"  >{{user.first_name}}</router-link>
        </ul>
        <router-view></router-view>
     </div>
