@@ -3,5 +3,5 @@ import UserComponent from './components/UserComponent';
 
 export const routes = [
     {path:'',component: HomeComponent},
-    {path:'',component: UserComponent}
+    {path:'/users',component: UserComponent}
 ]
