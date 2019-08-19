@@ -17,6 +17,19 @@ export default {
             user: {}
         }
     },
+    watch: {
+        //detectacambios en la ruta de la vista
+        $route(){
+            let id = this.$route.params.id;
+            this.$http.get('https://reqres.in/api/users/'+id).then( (result) => {
+                return result.json();
+            }).then( (result) => {
+                this.user = result.data;  
+            }).catch((err) => {
+                
+            });
+        }
+    },
     created() {
         let id = this.$route.params.id;
         this.$http.get('https://reqres.in/api/users/'+id).then( (result) => {
