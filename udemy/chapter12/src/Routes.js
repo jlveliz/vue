@@ -1,6 +1,12 @@
 import HomeComponent from './components/HomeComponent';
-import UserComponent from './components/UserComponent';
+// import UserComponent from './components/UserComponent';
 import UserDetailComponent from './components/UserDetailComponent';
+
+const UserComponent = resolve => {
+    require.ensure(['./components/UserComponent.vue'], () => {
+        resolve(require('./components/UserComponent.vue'))
+    });
+}
 
 export const routes = [
     {
